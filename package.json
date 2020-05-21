@@ -36,6 +36,7 @@
 	},
 	"scripts": {
 		"build": "parcel build src/index.ts",
-		"fmt": "prettier --ignore-path .gitignore --write ."
+		"fmt": "prettier --ignore-path .gitignore --write .",
+		"prepare": "npm run build"
 	}
 }
