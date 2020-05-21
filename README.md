@@ -12,13 +12,13 @@ in all of them.
 
 ```javascript
 // in the main process
-import { syncMain } from "@mckayla/electron-redux";
+import { syncMain } from '@mckayla/electron-redux';
 const store = createStore(reducer, syncMain);
 ```
 
 ```javascript
 // in the renderer processes
-import { syncRenderer } from "@mckayla/electron-redux";
+import { syncRenderer } from '@mckayla/electron-redux';
 const store = createStore(reducer, syncRenderer);
 ```
 
@@ -36,13 +36,13 @@ be ignored and simply passed through to the next middleware.
 
 Actions **MUST** be serializable
 
--   Objects with enumerable properties
--   Arrays
--   Numbers
--   Booleans
--   Strings
--   Maps
--   Sets
+- Objects with enumerable properties
+- Arrays
+- Numbers
+- Booleans
+- Strings
+- Maps
+- Sets
 
 ### Local actions
 
@@ -51,11 +51,11 @@ played in the current thread, then you can set the scope meta property to local.
 
 ```javascript
 const myLocalActionCreator = () => ({
-	type: "MY_ACTION",
-	payload: 123,
-	meta: {
-		scope: "local", // only play the action locally
-	},
+  type: 'MY_ACTION',
+  payload: 123,
+  meta: {
+    scope: 'local', // only play the action locally
+  },
 });
 ```
 
@@ -68,6 +68,6 @@ dispatch(stopForwarding(action));
 
 ## Contributors
 
--   [Burkhard Reffeling](https://github.com/hardchor)
--   [Charlie Hess](https://github.com/CharlieHess)
--   [Roman Paradeev](https://github.com/sameoldmadness)
+- [Burkhard Reffeling](https://github.com/hardchor)
+- [Charlie Hess](https://github.com/CharlieHess)
+- [Roman Paradeev](https://github.com/sameoldmadness)

@@ -1,7 +1,7 @@
-const { syncRenderer } = require("../..");
-const redux = require("redux");
+const { syncRenderer } = require('../..');
+const redux = require('redux');
 
-const { decrement, increment, reducer } = require("./common");
+const { decrement, increment, reducer } = require('./common');
 
 const store = redux.createStore(reducer, syncRenderer);
 
