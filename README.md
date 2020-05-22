@@ -1,7 +1,6 @@
 # electron-redux
 
 [![package version](https://img.shields.io/badge/@paulrosania%2felectron--redux-v2.0.0-afbdf7.svg)](https://npmjs.com/package/@paulrosania/electron-redux)
-[![build status](https://github.com/paulrosania/electron-redux/workflows/main/badge.svg)](https://github.com/paulrosania/electron-redux/actions)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io)
 
 ![electron-redux data flow](https://cloud.githubusercontent.com/assets/307162/20675737/385ce59e-b585-11e6-947e-3867e77c783d.png)
