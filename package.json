@@ -1,13 +1,13 @@
 {
-  "name": "@mckayla/electron-redux",
-  "version": "2.0.1",
+  "name": "@paulrosania/electron-redux",
+  "version": "2.0.0",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "description": "Keep your store in sync across processes",
-  "author": "McKayla Washburn",
-  "repository": "https://github.com/partheseas/electron-redux",
-  "bugs": "https://github.com/partheseas/electron-redux/issues",
+  "author": "Paul Rosania",
+  "repository": "https://github.com/paulrosania/electron-redux",
+  "bugs": "https://github.com/paulrosania/electron-redux/issues",
   "files": [
     "dist/**"
   ],

@@ -11,7 +11,7 @@ const blacklist = [/^@@/, /^redux-form/];
 
 export const stopForwarding = (
   action: FluxStandardAction<string, unknown, ActionMeta>
-) => ({
+): FluxStandardAction<string, unknown, ActionMeta> => ({
   ...action,
   meta: {
     ...action.meta,
@@ -22,7 +22,6 @@ export const stopForwarding = (
 export const validateAction = (
   action: unknown
 ): action is FluxStandardAction<string, unknown, ActionMeta> => {
-  isFSA;
   if (!isFSA<string, unknown, ActionMeta>(action)) {
     log('Only flux-standard-actions will be forwarded', action);
     return false;

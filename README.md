@@ -1,8 +1,7 @@
 # electron-redux
 
-[![package version](https://img.shields.io/badge/@mckayla%2felectron--redux-v2.0.0-afbdf7.svg)](https://npmjs.com/package/@mckayla/electron-redux)
-![stability](https://img.shields.io/badge/stability-release-66f29a.svg)
-[![build status](https://github.com/partheseas/electron-redux/workflows/main/badge.svg)](https://github.com/partheseas/electron-redux/actions)
+[![package version](https://img.shields.io/badge/@paulrosania%2felectron--redux-v2.0.0-afbdf7.svg)](https://npmjs.com/package/@paulrosania/electron-redux)
+[![build status](https://github.com/paulrosania/electron-redux/workflows/main/badge.svg)](https://github.com/paulrosania/electron-redux/actions)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io)
 
 ![electron-redux data flow](https://cloud.githubusercontent.com/assets/307162/20675737/385ce59e-b585-11e6-947e-3867e77c783d.png)
@@ -12,18 +11,19 @@ in all of them.
 
 ```javascript
 // in the main process
-import { syncMain } from '@mckayla/electron-redux';
-const store = createStore(reducer, syncMain);
+import { syncMain } from '@paulrosania/electron-redux';
+const store = createStore(reducer, applyMiddleware(syncMain));
 ```
 
 ```javascript
 // in the renderer processes
-import { syncRenderer } from '@mckayla/electron-redux';
-const store = createStore(reducer, syncRenderer);
+import { syncRenderer, wrapRendererReducer } from '@paulrosania/electron-redux';
+const store = createStore(wrapRendererReducer(reducer), applyMiddleware(syncRenderer));
 ```
 
-That's it! Just add these enhancers to where you initialize your store. As long
-as your reducers are pure/deterministic (which they already should be) your state
+That's it! Just add each middleware to where you initialize your store, and wrap
+the renderer reducer so it can receive state from the main process. As long as
+your reducers are pure/deterministic (which they already should be) your state
 should be reproduced accurately across all of the processes.
 
 ## Actions
@@ -41,8 +41,6 @@ Actions **MUST** be serializable
 - Numbers
 - Booleans
 - Strings
-- Maps
-- Sets
 
 ### Local actions
 
@@ -62,12 +60,13 @@ const myLocalActionCreator = () => ({
 We also provide a utility function for this
 
 ```
-import { stopForwarding } from "@mckayla/electron-redux";
+import { stopForwarding } from "@paulrosania/electron-redux";
 dispatch(stopForwarding(action));
 ```
 
 ## Contributors
 
+- [McKayla Washburn](https://github.com/partheseas)
 - [Burkhard Reffeling](https://github.com/hardchor)
 - [Charlie Hess](https://github.com/CharlieHess)
 - [Roman Paradeev](https://github.com/sameoldmadness)

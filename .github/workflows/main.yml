@@ -27,4 +27,4 @@ jobs:
 
       - run: yarn build
       # Need tests plz
-      # - run: yarn workspace @mckayla/electron-redux-e2e test
+      # - run: yarn workspace @paulrosania/electron-redux-e2e test
